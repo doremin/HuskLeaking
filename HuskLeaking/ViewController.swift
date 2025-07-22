@@ -141,10 +141,10 @@ class ViewController: UIViewController {
         data = FooObject()
         
         for _ in 0 ..< 10 {
-            let weakRef = { [unowned data = self.data] in
+            let unownedRef = { [unowned data = self.data] in
                 return data
             }
-            unownedRefs.append(weakRef)
+            unownedRefs.append(unownedRef)
         }
         updateStatus()
     }
